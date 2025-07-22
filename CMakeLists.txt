@@ -55,7 +55,7 @@ include(CMakePackageConfigHelpers)
 include(FeatureSummary)
 
 # We need to enable C++ before trying to check for coverage
-option(WITH_GTEST "Build gtest_zlib" ON)
+option(WITH_GTEST "Build gtest_zlib" OF)
 option(WITH_FUZZERS "Build test/fuzz" OFF)
 option(WITH_BENCHMARKS "Build test/benchmarks" OFF)
 
@@ -92,9 +92,9 @@ endif()
 # Options parsing
 #
 option(WITH_GZFILEOP "Compile with support for gzFile related functions" ON)
-option(ZLIB_COMPAT "Compile with zlib compatible API" OFF)
-option(ZLIB_ENABLE_TESTS "Build test binaries" ON)
-option(ZLIBNG_ENABLE_TESTS "Test zlib-ng specific API" ON)
+option(ZLIB_COMPAT "Compile with zlib compatible API" ON)
+option(ZLIB_ENABLE_TESTS "Build test binaries" OFF)
+option(ZLIBNG_ENABLE_TESTS "Test zlib-ng specific API" OFF)
 option(WITH_BENCHMARK_APPS "Build application benchmarks" OFF)
 option(WITH_OPTIM "Build with optimisation" ON)
 option(WITH_REDUCED_MEM "Reduced memory usage for special cases (reduces performance)" OFF)
