@@ -36,6 +36,13 @@ message(STATUS "ZLIBNG_HEADER_VERSION: ${ZLIBNG_HEADER_VERSION}")
 
 project(zlib VERSION ${ZLIB_HEADER_VERSION} LANGUAGES C)
 
+###############
+# ASI default settings
+list(APPEND CMAKE_MODULE_PATH "$ENV{ASV_CMAKE}")
+include(asv_cmake_defaults)
+asv_cmake_defaults( )
+###############
+
 include(CheckTypeSize)
 include(CheckSymbolExists)
 include(CheckFunctionExists)
