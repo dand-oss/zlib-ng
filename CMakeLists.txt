@@ -39,6 +39,8 @@ include(asv_cmake_defaults)
 asv_cmake_defaults( )
 ###############
 
+option(BUILD_SHARED_LIBS "Build Shared Libraries" ON)
+
 include(CheckTypeSize)
 include(CheckSymbolExists)
 include(CheckFunctionExists)
