@@ -50,6 +50,7 @@ set(BENCH_INTERNAL_SRCS
     benchmark_compare256_rle.cc
     benchmark_crc32.cc
     benchmark_crc32_copy.cc
+    benchmark_deflate.cc
     benchmark_insert_string.cc
     benchmark_slidehash.cc
     )
