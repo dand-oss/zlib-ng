@@ -1,12 +1,13 @@
-#if defined(X86_SSE2) && !defined(WITHOUT_CHORBA_SSE)
-
 #include "zbuild.h"
+#include "arch_functions.h"
+
+#if defined(X86_SSE2) && !defined(WITHOUT_CHORBA_SSE) && defined(CRC32_CHORBA_FALLBACK)
+
 #include "crc32_chorba_p.h"
 #include "crc32_braid_p.h"
 #include "crc32_braid_tbl.h"
 #include <emmintrin.h>
 #include "arch/x86/x86_intrins.h"
-#include "arch_functions.h"
 
 #define LSHIFT_QWORD(x)     _mm_unpacklo_epi64(_mm_setzero_si128(), (x))
 #define RSHIFT_QWORD(x)     _mm_unpackhi_epi64((x), _mm_setzero_si128())
