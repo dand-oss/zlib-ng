@@ -1501,8 +1501,11 @@ if(NOT DEFINED BUILD_SHARED_LIBS OR BUILD_SHARED_LIBS)
         set(CMAKE_SHARED_LIBRARY_NAME_WITH_VERSION 0)
     elseif(WIN32)
         # Creates zlib1.dll when building shared library version
+        # ASI: zlib1-asv.dll - msys2 mingw64/ucrt64 and EDB pgsql/bin ship their
+        # own zlib1.dll, ahead of ours on the Windows PATH; the import library
+        # stays zlib.lib, so consumers pick the new name up when they relink
         if(ZLIB_COMPAT)
-            set_target_properties(zlib-ng PROPERTIES SUFFIX "1.dll")
+            set_target_properties(zlib-ng PROPERTIES SUFFIX "1-asv.dll")
         else()
             set_target_properties(zlib-ng PROPERTIES SUFFIX "2.dll")
         endif()
